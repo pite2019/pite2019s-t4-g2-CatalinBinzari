@@ -23,5 +23,47 @@
 #
 #Delete these comments before commit!
 #Good luck.
-i could not do anything ,i will learn how to do and will be ready for next time ,.sorry
+from Matrix2x2 import represent2𝑥2matrice as Matrix
+from colorama import init
+from colorama import Fore, Back, Style
+init()
+print(Fore.RED)
+print(Back.CYAN)
+print(Style.DIM)
+
+matrix_1 =Matrix(4 ,5 ,6 ,7)
+matrix_2 =Matrix(2 ,2 ,2 ,1)
+#matrix_3 =Matrix() //null matrix
+
+#print(Matrix.display(matrix_3))
+print('-------Matrix 1-------\n')
+
+print(Matrix.display(matrix_1))
+print('\n-------Matrix 2-------\n')
+print(Matrix.display(matrix_2))
+print('\n-------Matrix 3---"+ operator"----\n')
+matrix_3=matrix_1+matrix_2
+print(Matrix.display(matrix_3))
+print('\n-------Matrix 4---.add()----\n')
+
+matrix_4=matrix_3.add(matrix_2)
+print(Matrix.display(matrix_4))
+print('\n---display instance using __str__--\n')
+print(matrix_4)
+
+print('\n-------Matrix 5---".prod()"----\n')
+matrix_5=matrix_1.prod(matrix_2)
+print(matrix_5)
+
+print('\n-------Matrix 5---" * operator"----\n')
+matrix_6=matrix_1*matrix_2
+print(matrix_6)
+
+
+
+
+
+
+
+
 
