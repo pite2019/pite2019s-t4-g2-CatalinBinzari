@@ -1,12 +1,8 @@
 from Matrix import MatrixNxN
-from colorama import init
-from colorama import Fore, Back, Style
 
 def main():
-	init()
-	print(Fore.RED)
-	print(Back.CYAN)
-	print(Style.DIM)
+	
+	
 
 
 	a=MatrixNxN(1,2,3,4,5,6,7,8,9)
@@ -25,8 +21,19 @@ def main():
 	print(a)
 
 
-	a+=5
+	a=a+5
 	print(a)
+	a=a-99
+	print(a)
+	a=a-c
+	print(a)
+	a-=4
+	print(a)
+	c-=b
+	print(c)
+
+	c-=b+55
+	c.display()
 
 
 if __name__=='__main__':

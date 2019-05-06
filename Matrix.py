@@ -1,5 +1,6 @@
 import math
-
+from colorama import init
+from colorama import Fore, Back, Style
 class MatrixNxN:
 	def __init__(self,*args):
 		self.matrix=[]
@@ -18,32 +19,40 @@ class MatrixNxN:
 
 
 	def __add__(self,other):
-		
-		return MatrixNxN(*(sft(self.matrix,other.matrix)))
+		if isinstance(other, int):
+			return MatrixNxN(*(egalplus(self.matrix,other)))
+		else:
+		     return MatrixNxN(*(sft(self.matrix,other.matrix)))
+
 	def add(self,other):
-		return MatrixNxN(*(sft(self.matrix,other.matrix)))
+		return self.__add__(other)
 
 
 
 	def display(self):
-		arat(self.matrix)
+		return self.__str__()
 	def __str__(self):
-		
+		print(Fore.GREEN + Back.BLACK + Style.DIM)
 		return '\n'.join([''.join(['{:{}}'.format(item,4) for item in row]) for row in self.matrix])
-
+		print(Fore.DEFAULT + Back.DEFAULT + Style.DEFAULT)
+		
 
 	def __mul__(self, other):
-		return MatrixNxN(*(prodh(self.matrix,other.matrix)))
-	def __iadd__(self,other):
-		if isinstance(other, (int,float)):
-			return MatrixNxN(*(egalplus(self.matrix,other)))
-		else:
-		     return MatrixNxN(*(sft(self.matrix,other.matrix)))
-	def __imul__():
 		if isinstance(other, (int)):
 			return MatrixNxN(*(egalmul(self.matrix,other)))
 		else:
 		     return MatrixNxN(*(prodh(self.matrix,other.matrix)))
+	def __iadd__(self,other):
+		return self.__add__(other)
+	def __imul__(self,other):
+		return self.__mul__(other)
+	def __sub__(self,other):
+		if isinstance(other, int):
+			return MatrixNxN(*(egalminus(self.matrix,other)))
+		else:
+		     return MatrixNxN(*(sftminus(self.matrix,other.matrix)))
+	def __isub__(self,other):
+		return self.__sub__(other)
 def prodh(matrix,omatrix):
 	if len(matrix) != len(omatrix):
 			print('matrix should be the same size ')
@@ -55,9 +64,7 @@ def prodh(matrix,omatrix):
 			c.append(result[i][j])
 	
 	return c
-def arat(matrix):
-	print()
-	print('\n'.join([''.join(['{:{}}'.format(item,4) for item in row]) for row in matrix]))
+
 def sft(matrix,omatrix):
 	if len(matrix) != len(omatrix):
 			print('matrix should be the same size ')
@@ -82,6 +89,23 @@ def egalmul(matrix,value):
 		for i in range(len(matrix)):
 			for j in range(len(matrix[0])):
 				c.append(matrix[i][j]*value)
+	return c
+def egalminus(matrix,value):
+	c=[]
+	if isinstance(value, int):
+		for i in range(len(matrix)):
+			for j in range(len(matrix[0])):
+				c.append(matrix[i][j]-value)
+	return c
+def sftminus(matrix,omatrix):
+	if len(matrix) != len(omatrix):
+			print('matrix should be the same size ')
+			return 1
+	c=[]
+	for i in range(len(matrix)):
+		for j in range(len(matrix[0])):
+			c.append(matrix[i][j]-omatrix[i][j])
+		
 	return c
 
 
