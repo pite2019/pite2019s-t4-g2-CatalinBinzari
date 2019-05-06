@@ -34,7 +34,7 @@ class MatrixNxN:
 	def __str__(self):
 		print(Fore.GREEN + Back.BLACK + Style.DIM)
 		return '\n'.join([''.join(['{:{}}'.format(item,4) for item in row]) for row in self.matrix])
-		print(Fore.DEFAULT + Back.DEFAULT + Style.DEFAULT)
+		
 		
 
 	def __mul__(self, other):
