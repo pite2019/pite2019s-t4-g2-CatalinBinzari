@@ -6,7 +6,7 @@ def main():
 	matrix2x2=MatrixNxN(-2.5,6.6,0.66,3.4)
 	matrix4x4=MatrixNxN(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)
 	
-	#matrix5x5 --> matrixNxN
+	#matrix5x5 --> matrixNxN   , N->Inf
 	print(matrix2x2)
 
 
